@@ -1,0 +1,264 @@
+/* General styles */
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('pdd.jpg'); /* Add your image path here */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+.logo img {
+    width: 300px; 
+    height: auto;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #ffffff, #ffffff); 
+    padding: 1.5em 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo a {
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav .logo a:hover {
+    color: #ff4c4c;
+    transform: scale(1.05); 
+}
+
+nav ul {
+    display: flex;
+    gap: 2em;
+    list-style: none; 
+    padding: 0;
+    margin: 0; 
+}
+
+nav ul li {
+    position: relative;
+    z-index: 10;
+}
+
+/* Button Styles */
+nav ul li .dropbtn {
+    padding: 0.75em 1.5em;
+    background: linear-gradient(90deg, #000000, #707070);
+    color: #ffffff;
+    border-radius: 30px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+nav ul li .dropbtn:hover {
+    background: linear-gradient(90deg,#707070, #000000);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Dropdown Menu Styles */
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 11; 
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+nav ul li .dropdown-content a {
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li .dropdown-content a:hover {
+    background-color: #919191;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.welcome-message {
+    display: inline-block;
+    margin-left: 20px; 
+    font-weight: bold;
+    color: #333; 
+}
+
+/* Compare Button Styles */
+.compare-btn {
+    padding: 0.75em 1.5em;
+    background: linear-gradient(90deg, #000000, #4e4e4e); /* Change to your preferred color */
+    color: #ffffff;
+    border-radius: 30px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.compare-btn:hover {
+    background: linear-gradient(90deg, #707070, #000000); /* Change to your preferred hover color */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Product Container */
+.product-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    padding: 40px;
+    background-color: white;
+    max-width: 1000px;
+    margin: 50px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.product-image img {
+    width: 250px; /* Adjust to your desired width */
+    height: auto; /* Keep aspect ratio */
+    border-radius: 10px;
+    border: 2px solid #ddd; /* Add border for emphasis */
+}
+
+.product-info {
+    max-width: 600px;
+    margin-left: 30px;
+}
+
+.product-info h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333; /* Emphasize product title */
+    border-bottom: 2px solid #28a745; /* Underline the title */
+    padding-bottom: 10px; /* Space between title and underline */
+}
+
+.product-info .category, 
+.product-info .price,
+.product-info .description,
+.product-info .genre, 
+.product-info .storage, 
+.product-info .ram, 
+.product-info .processor, 
+.product-info .controller {
+    font-weight: normal; /* Reset to normal for the body text */
+    margin: 10px 0; /* Space between paragraphs */
+}
+
+.product-info .storage strong, 
+.product-info .ram strong, 
+.product-info .processor strong, 
+.product-info .controller strong, 
+.product-info .genre strong {
+    font-weight: bold; /* Make the labels bold */
+    color: #28a745; /* Color for labels */
+}
+
+/* Add to Cart Form */
+.add-to-cart-form {
+    margin-top: 20px;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Space between quantity and button */
+}
+
+.quantity-selector label {
+    margin-right: 10px;
+}
+
+.quantity-selector input {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-to-cart-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform for scaling */
+}
+
+.add-to-cart-button:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .product-info {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .product-image img {
+        width: 100%;
+    }
+}

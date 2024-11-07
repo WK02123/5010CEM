@@ -1,0 +1,232 @@
+body {
+    font-family: 'Poppins', sans-serif; 
+}
+
+.logo img {
+    width: 300px; 
+    height: auto;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #ffffff, #ffffff); 
+    padding: 1.5em 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo a {
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav .logo a:hover {
+    color: #ff4c4c;
+    transform: scale(1.05); 
+}
+
+nav ul {
+    display: flex;
+    gap: 2em;
+    list-style-type: none; /* Removes default list style */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+}
+
+nav ul li {
+    margin: 0; /* Removes any default margin around list items */
+    position: relative;
+    z-index: 10;
+}
+
+/* Button Styles */
+nav ul li .dropbtn {
+    padding: 0.75em 1.5em;
+    background: linear-gradient(90deg, #000000, #707070);
+    color: #ffffff;
+    border-radius: 30px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+nav ul li .dropbtn:hover {
+    background: linear-gradient(90deg,#707070, #000000);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Dropdown Menu Styles */
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 11; 
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+nav ul li .dropdown-content a {
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li .dropdown-content a:hover {
+    background-color: #919191;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Compare Button Styles */
+.compare-btn {
+    padding: 0.75em 1.5em;
+    background: linear-gradient(90deg, #000000, #4e4e4e); /* Change to your preferred color */
+    color: #ffffff;
+    border-radius: 30px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.compare-btn:hover {
+    background: linear-gradient(90deg, #707070, #000000); /* Change to your preferred hover color */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.welcome-message {
+    display: inline-block;
+    margin-left: 20px; 
+    font-weight: bold;
+    color: #333; 
+}
+
+/* Body and Product List Styles */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-item a {
+    text-decoration: none; /* Remove underline from link */
+}
+
+.product-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-item h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    text-decoration: none; /* Remove underline */
+}
+
+.product-item p {
+    margin: 5px 0;
+}
+
+.product-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+/* Footer Styles */
+footer {
+    background-color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+    color: #333;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .banner-text h1 {
+        font-size: 2.5em;
+    }
+
+    .banner-text p {
+        font-size: 1em;
+    }
+
+    .banner .btn, .background-section .btn, .product-item .btn {
+        width: calc(15vw + 80px); 
+        max-width: 200px;
+    }
+}

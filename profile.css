@@ -1,0 +1,202 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    min-height: 100vh; /* Use min-height for better layout */
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 100px; /* Ensure content doesn't hide behind fixed header */
+}
+
+.profile {
+    width: 90%;
+    max-width: 700px; /* Set a max width for the profile section */
+    margin: 20px auto; /* Center the profile section with some margin */
+    padding: 30px; /* Increase padding for better aesthetics */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333; /* Darker color for the heading */
+    text-align: center; /* Center the title */
+}
+
+.profile-info {
+    margin: 15px 0; /* More spacing between fields */
+}
+
+.profile-info div {
+    margin-bottom: 15px; /* Add spacing between grouped elements */
+}
+
+.profile-info label {
+    display: block; /* Stack label above input */
+    margin-bottom: 5px;
+    font-weight: bold; /* Make labels bold */
+    color: #555; /* Lighter shade for label color */
+}
+
+.profile-info input {
+    width: 96%; /* Full width for inputs */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border 0.3s ease; /* Add transition for input focus */
+}
+
+.profile-info input:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.update-btn {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease; /* Add transform on hover */
+}
+
+.update-btn:hover {
+    background: linear-gradient(90deg, #0056b3, #007bff);
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.logo img {
+    width: 300px; 
+    height: auto;
+}
+
+/* Compare Button Styles */
+.compare-btn {
+    padding: 0.75em 1.5em;
+    background: linear-gradient(90deg, #000000, #4e4e4e); /* Change to your preferred color */
+    color: #ffffff;
+    border-radius: 30px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.compare-btn:hover {
+    background: linear-gradient(90deg, #707070, #000000); /* Change to your preferred hover color */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #ffffff, #ffffff); 
+    padding: 1.5em 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    position: fixed; /* Fixes the header at the top */
+    width: 100%; /* Ensures it takes the full width */
+    top: 0; /* Aligns it to the top */
+    z-index: 1000; /* Ensures it is above other content */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo a {
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav .logo a:hover {
+    color: #ff4c4c;
+    transform: scale(1.05); 
+}
+
+nav ul {
+    display: flex;
+    gap: 2em;
+    list-style-type: none; /* Removes default list style */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+}
+
+nav ul li {
+    position: relative;
+    z-index: 10;
+    margin: 0; /* Removes any default margin around list items */  
+}
+
+/* Button Styles */
+nav ul li .dropbtn {
+    padding: 0.75em 1.5em;
+    background: linear-gradient(90deg, #000000, #707070);
+    color: #ffffff;
+    border-radius: 30px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+nav ul li .dropbtn:hover {
+    background: linear-gradient(90deg,#707070, #000000);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Dropdown Menu Styles */
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 11; 
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+nav ul li .dropdown-content a {
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li .dropdown-content a:hover {
+    background-color: #919191;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.welcome-message {
+    display: inline-block;
+    margin-left: 20px; 
+    font-weight: bold;
+    color: #333; 
+}
+

@@ -1,0 +1,183 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    background-image: url('adminbackground.jpg'); /* Add your image path here */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #ffffff, #ffffff);
+    padding: 1.5em 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo img {
+    width: 200px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 2em;
+    list-style: none;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    padding: 0.75em 1.5em;
+    background: linear-gradient(90deg, #000000, #707070);
+    color: #ffffff;
+    border-radius: 30px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background: linear-gradient(90deg, #707070, #000000);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Dropdown Menu */
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li .dropdown {
+    position: relative;
+}
+
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgb(255, 255, 255);
+    min-width: 160px;
+    z-index: 1;
+}
+
+nav ul li .dropdown-content a {
+    padding: 1em;
+    background-color: #fff;
+    color: #ffffff;
+    border: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Add Console Section */
+.add-console {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-console h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.add-console label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.add-console input[type="text"],
+.add-console input[type="number"],
+.add-console textarea,
+.add-console select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Ensure buttons are placed at the bottom of their sections */
+.add-console form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Add space between form fields */
+}
+
+.add-console button {
+    align-self: flex-start; /* Ensure button stays left-aligned */
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 5px; /* Add space above the button */
+}
+
+.add-console button:hover {
+    background: #555;
+}
+
+h3 {
+    margin-top: 30px; /* Add space above new category and delete category sections */
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-content .social-icons {
+    margin-top: 10px;
+}
+
+.footer-content .social-icons a {
+    margin: 0 10px;
+}
+
+.footer-content .social-icons img {
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.footer-content .social-icons a:hover img {
+    transform: scale(1.1);
+}
