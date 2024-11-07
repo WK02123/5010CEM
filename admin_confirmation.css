@@ -1,0 +1,217 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.chart-container {
+    width: 60%;
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #ffffff, #ffffff);
+    padding: 1.5em 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo img {
+    width: 200px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 2em;
+    list-style-type: none;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    padding: 0.75em 1.5em;
+    background: linear-gradient(90deg, #000000, #707070);
+    color: #ffffff;
+    border-radius: 30px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none; /* Remove underline */
+}
+
+nav ul li a:hover {
+    background: linear-gradient(90deg, #707070, #000000);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Add Game Section */
+.add-game {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-game h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.add-game label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.add-game input[type="text"],
+.add-game input[type="number"],
+.add-game textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-game button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.add-game button:hover {
+    background: #555;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-content .social-icons {
+    margin-top: 10px;
+}
+
+.footer-content .social-icons a {
+    margin: 0 10px;
+}
+
+.footer-content .social-icons img {
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.footer-content .social-icons a:hover img {
+    transform: scale(1.1);
+}
+/* Style for the Accept and Reject buttons */
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Accept button with a green color */
+button[type="submit"][value="accept"] {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+button[type="submit"][value="accept"]:hover {
+    background-color: #45a049;
+}
+
+/* Reject button with a red color */
+button[type="submit"][value="reject"] {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+button[type="submit"][value="reject"]:hover {
+    background-color: #e53935;
+}
+
+/* Style for the View Receipt link */
+a.view-receipt {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #2196F3; /* Blue */
+    border: 2px solid #2196F3;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+a.view-receipt:hover {
+    background-color: #2196F3;
+    color: white;
+}
+
+
+
