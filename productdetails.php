@@ -120,6 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
                     <div class="dropdown-content">
                         <?php if (isset($_SESSION['username'])): ?>
                             <a href="profile.php">Profile</a>
+                            <a href="orders.php">Orders</a>
                             <a href="cart.php">Cart</a>
                             <a href="logout.php">Logout</a>
                         <?php else: ?>
@@ -147,30 +148,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
             <!-- Display stock information -->
             <p class="stock">Stock Left: <strong><?php echo intval($product['stock']); ?></strong></p>
 
-            <?php if ($table == 'games'): ?>
-                <p class="genre"><strong>Genre:</strong> <?php echo htmlspecialchars($product['genre']); ?></p>
-            <?php elseif ($table == 'console'): ?>
-                <p class="storage"><strong>Storage:</strong> <?php echo htmlspecialchars($product['storage']); ?></p>
-                <p class="ram"><strong>RAM:</strong> <?php echo htmlspecialchars($product['ram']); ?></p>
-                <p class="processor"><strong>Processor:</strong> <?php echo htmlspecialchars($product['processor']); ?></p>
-                <p class="controller"><strong>Controller:</strong> <?php echo htmlspecialchars($product['controller']); ?>
-                </p>
-            <?php elseif ($table == 'accessories'): ?>
-                <p class="accessory-details"><strong>Details:</strong> Accessory details specific to the accessory category.
-                </p>
-            <?php endif; ?>
+            <?php if ($product['stock'] == 0): ?>
+                <!-- Disable the Add to Cart button -->
+                <button class="add-to-cart-button" disabled>Out of Stock</button>
+            <?php else: ?>
+                <!-- Continue displaying product details for games, consoles, or accessories -->
+                <?php if ($table == 'games'): ?>
+                    <p class="genre"><strong>Genre:</strong> <?php echo htmlspecialchars($product['genre']); ?></p>
+                <?php elseif ($table == 'console'): ?>
+                    <p class="storage"><strong>Storage:</strong> <?php echo htmlspecialchars($product['storage']); ?></p>
+                    <p class="ram"><strong>RAM:</strong> <?php echo htmlspecialchars($product['ram']); ?></p>
+                    <p class="processor"><strong>Processor:</strong> <?php echo htmlspecialchars($product['processor']); ?></p>
+                    <p class="controller"><strong>Controller:</strong> <?php echo htmlspecialchars($product['controller']); ?>
+                    </p>
+                <?php elseif ($table == 'accessories'): ?>
+                    <p class="accessory-details"><strong>Details:</strong> Accessory details specific to the accessory category.
+                    </p>
+                <?php endif; ?>
 
-            <!-- Add to Cart Form -->
-            <form method="post" action="add_to_cart.php">
-                <input type="hidden" name="product_id" value="<?php echo $productID; ?>">
-                <input type="hidden" name="table" value="<?php echo $table; ?>">
-                <div class="quantity-selector">
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" id="quantity" name="quantity" value="1" min="1"
-                        max="<?php echo intval($product['stock']); ?>">
-                </div>
-                <button type="submit" name="add_to_cart" class="add-to-cart-button">Add to Cart</button>
-            </form>
+                <!-- Add to Cart Form -->
+                <form method="post" action="add_to_cart.php">
+                    <input type="hidden" name="product_id" value="<?php echo $productID; ?>">
+                    <input type="hidden" name="table" value="<?php echo $table; ?>">
+                    <div class="quantity-selector">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1"
+                            max="<?php echo intval($product['stock']); ?>">
+                    </div>
+                    <button type="submit" name="add_to_cart" class="add-to-cart-button">Add to Cart</button>
+                </form>
+            <?php endif; ?>
 
         </div>
     </div>

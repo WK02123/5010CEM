@@ -86,6 +86,7 @@ if ($categoriesResult->num_rows > 0) {
                     <div class="dropdown-content">
                         <?php if (isset($_SESSION['username'])): ?>
                             <a href="profile.php">Profile</a>
+                            <a href="orders.php">Orders</a>
                             <a href="cart.php">Cart</a>
                             <a href="logout.php">Logout</a>
                         <?php else: ?>

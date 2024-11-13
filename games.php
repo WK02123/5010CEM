@@ -1,13 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
-    // If the user is not logged in, you can redirect them if needed.
 }
 
 include 'db.php';
 
-// Get the selected category from the URL, or default to 'Action'
-$category = isset($_GET['category']) ? $_GET['category'] : 'Action'; // Change default category as needed
+$category = isset($_GET['category']) ? $_GET['category'] : 'Action'; 
 
 // Fetch games based on the selected category
 $sql = "SELECT * FROM games WHERE category = '$category'";
@@ -88,6 +86,7 @@ if ($categoriesResult->num_rows > 0) {
                     <div class="dropdown-content">
                         <?php if (isset($_SESSION['username'])): ?>
                             <a href="profile.php">Profile</a>
+                            <a href="orders.php">Orders</a>
                             <a href="cart.php">Cart</a>
                             <a href="logout.php">Logout</a>
                         <?php else: ?>
@@ -108,7 +107,7 @@ if ($categoriesResult->num_rows > 0) {
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo '<div class="product-item">';
-                echo '<a href="productdetails.php?id=' . $row["id"] . '&table=games">'; // Change to 'games'
+                echo '<a href="productdetails.php?id=' . $row["id"] . '&table=games">'; 
                 echo '<img src="images/' . htmlspecialchars($row["image"]) . '" alt="' . htmlspecialchars($row["name"]) . '" loading="lazy">';
                 echo '<h3>' . htmlspecialchars($row["name"]) . '</h3>';
                 echo '<p>Price: RM ' . number_format($row["price"], 2) . '</p>';
