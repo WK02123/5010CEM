@@ -121,6 +121,7 @@ $conn->close();
             <ul>
                 <li><a href="admin_dashboard.php">Dashboard</a></li>
                 <li><a href="admin_banner_upload.php">Banner</a></li>
+                <li><a href="admin_confirmation.php">Orders</a></li>
                 <li><a href="admineditproducts.php">Edit Product</a></li>
                 <!-- Add dropdown for Add section -->
                 <li class="dropdown">

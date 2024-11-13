@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
         $price = $_POST['price'];
         $description = $_POST['description'];
         $category = $_POST['category'];
+        $stock = $_POST['stock'];  // Get the stock quantity from the form
 
         $imageName = '';
         if (!empty($_FILES['image']['name'])) {
@@ -75,14 +76,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
             $processor = isset($_POST['processor']) ? $_POST['processor'] : null;
             $controller = isset($_POST['controller']) ? $_POST['controller'] : null;
 
-            $stmt = $conn->prepare("UPDATE console SET name = ?, price = ?, description = ?, image = ?, storage = ?, ram = ?, processor = ?, controller = ?, category = ? WHERE id = ?");
-            $stmt->bind_param("sdsssisssi", $name, $price, $description, $imageName, $storage, $ram, $processor, $controller, $category, $id);
+            $stmt = $conn->prepare("UPDATE console SET name = ?, price = ?, description = ?, image = ?, storage = ?, ram = ?, processor = ?, controller = ?, category = ?, stock = ? WHERE id = ?");
+            $stmt->bind_param("sdsssisssii", $name, $price, $description, $imageName, $storage, $ram, $processor, $controller, $category, $stock, $id);
         } elseif ($productType == "games") {
-            $stmt = $conn->prepare("UPDATE games SET name = ?, price = ?, description = ?, image = ?, category = ? WHERE id = ?");
-            $stmt->bind_param("sdsssi", $name, $price, $description, $imageName, $category, $id);
+            $stmt = $conn->prepare("UPDATE games SET name = ?, price = ?, description = ?, image = ?, category = ?, stock = ? WHERE id = ?");
+            $stmt->bind_param("sdsssii", $name, $price, $description, $imageName, $category, $stock, $id);
         } elseif ($productType == "accessories") {
-            $stmt = $conn->prepare("UPDATE accessories SET name = ?, price = ?, description = ?, image = ?, category = ? WHERE id = ?");
-            $stmt->bind_param("sdsssi", $name, $price, $description, $imageName, $category, $id);
+            $stmt = $conn->prepare("UPDATE accessories SET name = ?, price = ?, description = ?, image = ?, category = ?, stock = ? WHERE id = ?");
+            $stmt->bind_param("sdsssii", $name, $price, $description, $imageName, $category, $stock, $id);
         }
 
         if ($stmt->execute()) {
@@ -93,6 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
         $stmt->close();
     }
 }
+
 
 $products = [];
 $productType = isset($_GET['productType']) ? $_GET['productType'] : '';
@@ -162,6 +164,7 @@ $conn->close();
             <ul>
                 <li><a href="admin_dashboard.php">Dashboard</a></li>
                 <li><a href="admin_banner_upload.php">Banner</a></li>
+                <li><a href="admin_confirmation.php">Orders</a></li>
                 <li><a href="admineditproducts.php">Edit Product</a></li>
                 <!-- Add dropdown for Add section -->
                 <li class="dropdown">
@@ -229,13 +232,19 @@ $conn->close();
                     <option value="">Select Category</option>
                     <?php foreach ($categories as $category) { ?>
                         <option value="<?php echo $category['name']; ?>" <?php if ($productData['category'] === $category['name'])
-                               echo 'selected'; ?>><?php echo $category['name']; ?></option>
+                               echo 'selected'; ?>>
+                            <?php echo $category['name']; ?>
+                        </option>
                     <?php } ?>
                 </select>
 
                 <label for="image">Image</label>
                 <input type="file" id="image" name="image" accept="image/*">
                 <p>Current Image: <?php echo $productData['image']; ?></p>
+
+                <!-- Add the stock input field -->
+                <label for="stock">Stock Quantity</label>
+                <input type="number" id="stock" name="stock" value="<?php echo $productData['stock']; ?>" required>
 
                 <?php if ($productType == "console") { ?>
                     <label for="storage">Storage</label>
@@ -255,6 +264,7 @@ $conn->close();
                 <button type="delete" name="delete" onclick="return confirmDeletion()">Delete Product</button>
             </form>
         <?php } ?>
+
     </section>
 </body>
 
